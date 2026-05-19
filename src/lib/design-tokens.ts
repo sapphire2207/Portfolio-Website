@@ -1,0 +1,80 @@
+import type { CSSProperties } from "react";
+
+export const designTokens = {
+  colors: {
+    backgroundPrimary: "#0a0a0f",
+    backgroundSecondary: "#0f0f1a",
+    surface: "#13131f",
+    surfaceElevated: "#1a1a2e",
+    borderSubtle: "#1e1e30",
+    borderStrong: "#2a2a40",
+    accentPrimary: "#6c63ff",
+    accentSecondary: "#00d4ff",
+    accentTertiary: "#ff6b6b",
+    textPrimary: "#f0f0ff",
+    textSecondary: "#a0a0b8",
+    textMuted: "#5a5a72",
+  },
+  gradients: {
+    hero: "linear-gradient(120deg, #6c63ff 0%, #a78bfa 50%, #00d4ff 100%)",
+    cardHover:
+      "linear-gradient(120deg, rgba(108, 99, 255, 0.133) 0%, rgba(0, 212, 255, 0.067) 100%)",
+    border: "linear-gradient(135deg, #6c63ff, #00d4ff)",
+  },
+  typography: {
+    display: "clamp(4rem, 10vw, 9rem)",
+    h1: "clamp(2.5rem, 5vw, 5rem)",
+    h2: "clamp(1.8rem, 3vw, 3rem)",
+    h3: "1.5rem",
+    bodyLarge: "1.125rem",
+    body: "1rem",
+    small: "0.875rem",
+  },
+  spacing: {
+    1: "0.5rem",
+    2: "1rem",
+    3: "1.5rem",
+    4: "2rem",
+    5: "2.5rem",
+    6: "3rem",
+    8: "4rem",
+    10: "5rem",
+    12: "6rem",
+  },
+  motion: {
+    hoverTransition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+    entranceEase: "power3.out",
+    transitionEase: "power2.inOut",
+    entranceDuration: 0.6,
+    heroDuration: 1,
+    listStagger: 0.07,
+    revealStart: "top 85%",
+  },
+} as const;
+
+type CSSVariables = CSSProperties & Record<`--${string}`, string | number>;
+
+export const designTokenCssVariables: CSSVariables = {
+  "--color-bg-primary": designTokens.colors.backgroundPrimary,
+  "--color-bg-secondary": designTokens.colors.backgroundSecondary,
+  "--color-surface": designTokens.colors.surface,
+  "--color-surface-elevated": designTokens.colors.surfaceElevated,
+  "--color-border-subtle": designTokens.colors.borderSubtle,
+  "--color-border-strong": designTokens.colors.borderStrong,
+  "--color-accent-primary": designTokens.colors.accentPrimary,
+  "--color-accent-secondary": designTokens.colors.accentSecondary,
+  "--color-accent-tertiary": designTokens.colors.accentTertiary,
+  "--color-text-primary": designTokens.colors.textPrimary,
+  "--color-text-secondary": designTokens.colors.textSecondary,
+  "--color-text-muted": designTokens.colors.textMuted,
+  "--gradient-hero": designTokens.gradients.hero,
+  "--gradient-card-hover": designTokens.gradients.cardHover,
+  "--font-size-display": designTokens.typography.display,
+  "--font-size-h1": designTokens.typography.h1,
+  "--font-size-h2": designTokens.typography.h2,
+  "--font-size-h3": designTokens.typography.h3,
+  "--font-size-body-lg": designTokens.typography.bodyLarge,
+  "--font-size-body": designTokens.typography.body,
+  "--font-size-small": designTokens.typography.small,
+  "--transition-hover": designTokens.motion.hoverTransition,
+};
