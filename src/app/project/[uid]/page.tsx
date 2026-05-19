@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import path from "node:path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ContentBody from "@/components/ContentBody";
@@ -11,7 +12,7 @@ type ProjectConfig = {
   date: string;
   tags: readonly string[];
   metaDescription: string;
-  markdownPath: string;
+  markdownFile: string;
 };
 
 const PROJECTS: Record<string, ProjectConfig> = {
@@ -30,7 +31,7 @@ const PROJECTS: Record<string, ProjectConfig> = {
     ],
     metaDescription:
       "AI powered full-stack e-commerce platform with MERN, Gemini AI workflows, and Stripe checkout.",
-    markdownPath: "C:\\Users\\sreem\\Desktop\\E-Commerce Website\\Fashora.md",
+    markdownFile: "fashora.md",
   },
   "secretly-ai-powered-anonymous-messaging-platform": {
     title: "Secretly - AI Powered Anonymous Messaging Platform",
@@ -47,7 +48,7 @@ const PROJECTS: Record<string, ProjectConfig> = {
     ],
     metaDescription:
       "Anonymous messaging platform with secure sessions, OTP verification, and AI-assisted message suggestions.",
-    markdownPath: "C:\\Users\\sreem\\Desktop\\secretlyy\\Secretly.md",
+    markdownFile: "secretly.md",
   },
   "youtube-twitter-backend-api": {
     title: "YouTube + Twitter Backend API",
@@ -63,7 +64,7 @@ const PROJECTS: Record<string, ProjectConfig> = {
     ],
     metaDescription:
       "Feature-rich backend system with JWT auth, media optimization, and core social features.",
-    markdownPath: "C:\\Users\\sreem\\Desktop\\yt-backend\\YoutubeTwitter.md",
+    markdownFile: "youtube-twitter-backend.md",
   },
 };
 
@@ -91,7 +92,10 @@ export default async function ProjectPage({
 
   let markdown = "";
   try {
-    markdown = await readFile(project.markdownPath, "utf8");
+    markdown = await readFile(
+      path.join(process.cwd(), "src", "content", "projects", project.markdownFile),
+      "utf8",
+    );
   } catch {
     notFound();
   }
