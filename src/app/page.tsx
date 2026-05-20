@@ -3,29 +3,29 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 
-const SoftAurora = dynamic(
-  () => import("@/components/designs/soft-aurora"),
-  { ssr: false },
-);
+const ColorBends = dynamic(() => import("@/components/designs/color-bends"), {
+  ssr: false,
+});
 
 export default function HomePage() {
   return (
     <main className="relative isolate">
       <div className="pointer-events-none fixed inset-0 -z-10 opacity-85">
-        <SoftAurora
-          scale={1.25}
-          brightness={0.9}
-          color1="#8ec5ff"
-          color2="#ff55d6"
-          noiseFrequency={2.1}
-          noiseAmplitude={0.85}
-          bandHeight={0.55}
-          bandSpread={0.9}
-          octaveDecay={0.22}
-          layerOffset={0.2}
-          colorSpeed={0.55}
-          enableMouseInteraction
-          mouseInfluence={0.14}
+        <ColorBends
+          colors={["#f7f7f7", "#e100ff"]}
+          rotation={75}
+          speed={0.18}
+          scale={1.05}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={0.9}
+          noise={0.12}
+          parallax={0.45}
+          iterations={1}
+          intensity={1.25}
+          bandWidth={6}
+          transparent
+          autoRotate={0}
         />
       </div>
       <Hero

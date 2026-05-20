@@ -57,45 +57,36 @@ const contactItems = [
 export default function AboutContact() {
   return (
     <Bounded>
-      <section className="rounded-3xl border border-white/[0.08] bg-[#101626]/80 p-6 shadow-[0_0_40px_rgba(108,99,255,0.12)] backdrop-blur-xl md:p-8">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#6c63ff] to-[#00d4ff] text-white shadow-lg shadow-[#6c63ff55]">
+      <section className="rounded-3xl border border-white/[0.08] bg-[#101626]/80 p-4 shadow-[0_0_40px_rgba(108,99,255,0.12)] backdrop-blur-xl sm:p-5 md:p-8">
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#6c63ff] to-[#00d4ff] text-white shadow-lg shadow-[#6c63ff55] sm:h-10 sm:w-10">
               <FaLocationDot />
             </span>
             <div>
-              <h2 className="display-font text-2xl font-bold text-[#f0f0ff]">
+              <h2 className="display-font text-xl font-bold text-[#f0f0ff] sm:text-2xl">
                 Contact
               </h2>
-              <p className="text-sm text-[#9aa5c8]">
+              <p className="text-xs text-[#9aa5c8] sm:text-sm">
                 Hyderabad, Telangana, India
               </p>
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="py-2 sm:py-4">
+            <div className="mx-auto flex max-w-3xl flex-wrap items-start justify-start gap-x-4 gap-y-5">
             {contactItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`group motion-all rounded-2xl border border-white/[0.08] bg-[#131b31]/70 p-4 hover:-translate-y-0.5 hover:border-[#6c63ff66] ${item.hoverColor}`}
+                className={`group inline-flex items-center justify-center rounded-lg border border-white/10 bg-[#131b31]/50 px-3 py-2 text-sm text-[#d7def6] transition-colors duration-300 ${item.hoverColor}`}
               >
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#1f2a4f] to-[#273768] text-[#d9e2ff] transition-colors duration-300 group-hover:from-[#6c63ff] group-hover:to-[#00d4ff] group-hover:text-white">
-                    <item.icon />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#7f8db5]">
-                      {item.label}
-                    </p>
-                    <p className="mt-1 text-sm font-medium text-[#d7def6]">
-                      {item.value}
-                    </p>
-                  </div>
-                </div>
+                <item.icon className="mr-2 h-4 w-4 text-[#9aa5c8] group-hover:text-current" />
+                <span className="text-xs text-[#d7def6] sm:text-sm">{item.value}</span>
               </a>
             ))}
+            </div>
           </div>
       </section>
     </Bounded>

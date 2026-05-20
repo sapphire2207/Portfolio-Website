@@ -1,15 +1,73 @@
-# YouTube + Twitter Backend API
+# YouTube Backend 
 
-A feature-rich backend API system inspired by core social platform workflows with a focus on clean architecture and extensibility.
+## Introduction
 
-## Highlights
+This is a ``YOUTUBE`` backend project that covers allmost the functionalities of youtube 
+and also combines the tweet functionality into it
 
-- JWT-based authentication and authorization flow.
-- Media upload + optimization pipeline with Multer and Cloudinary.
-- Structured MongoDB modeling for users, content, and engagement features.
-- Aggregation pipelines for efficient analytics and feed-like querying.
-- Modular Express architecture for maintainable endpoint scaling.
+## Important links
 
-## Core Stack
+| Content            | Link                                                                        |
+| -------------------| ----------------------------------------------------------------------------|
+| Model              | [click here ](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)         |
 
-Node.js, Express, MongoDB, JWT Auth, Cloudinary, Multer, Aggregation Pipelines.
+## Features
+
+### User Management:
+
+- Registration, login, logout, password reset
+- Profile management (avatar, cover image, details)
+- Watch history tracking
+
+### Video Management:
+
+- Video upload and publishing
+- Video search, sorting, and pagination
+- Video editing and deletion
+- Visibility control (publish/unpublish)
+
+### Tweet Management:
+
+- Tweet creation and publishing
+- Viewing user tweets
+- Updating and deleting tweets
+
+### Subscription Management:
+
+- Subscribing to channels
+- Viewing subscriber and subscribed channel lists
+
+### Playlist Management:
+
+- Creating, updating, and deleting playlists
+- Adding and removing videos from playlists
+- Viewing user playlists
+
+### Like Management:
+
+- Liking and unliking videos, comments, and tweets
+- Viewing liked videos
+
+### Comment Management:
+
+- Adding, updating, and deleting comments on videos
+
+### Dashboard:
+
+- Viewing channel statistics (views, subscribers, videos, likes)
+- Accessing uploaded videos
+
+### Health Check:
+
+- Endpoint to verify the backend's health
+
+## Technologies Used
+
+- Node.js 
+- Express.js
+- MongoDB
+- Cloudinary (must have an account)
+
+## License
+
+This project is licensed under [ChaiAurCode](https://www.youtube.com/@chaiaurcode).

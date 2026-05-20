@@ -83,7 +83,7 @@ export default function TechList({ title, items }: TechListProps) {
       }}
     >
       <Bounded as="div" className="pb-2">
-        <Heading size="lg" className="display-font mb-8 text-[#f0f0ff]" as="h2">
+        <Heading size="lg" className="display-font mb-6 text-[#f0f0ff] sm:mb-8" as="h2">
           {title}
         </Heading>
       </Bounded>
@@ -91,18 +91,18 @@ export default function TechList({ title, items }: TechListProps) {
       {items.map(({ techColor, techName }, index) => (
         <div
           key={index}
-          className="tech-row mb-8 flex items-center justify-center gap-4 text-[#1e1e30]"
+          className="tech-row mb-6 flex items-center justify-center gap-3 text-[#1e1e30] sm:mb-8 sm:gap-4"
           aria-label={techName}
         >
           {Array.from({ length: 15 }, (_, itemIndex) => (
             <React.Fragment key={itemIndex}>
               <span
-                className="tech-item display-font text-6xl font-extrabold uppercase tracking-tight md:text-7xl"
+                className="tech-item display-font text-4xl font-extrabold uppercase tracking-tight sm:text-5xl md:text-7xl"
                 style={{ color: itemIndex === 7 ? techColor : "inherit" }}
               >
                 {techName}
               </span>
-              <span className="text-2xl md:text-3xl">
+              <span className="text-xl sm:text-2xl md:text-3xl">
                 <MdCircle />
               </span>
             </React.Fragment>
