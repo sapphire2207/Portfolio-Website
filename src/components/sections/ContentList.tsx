@@ -95,7 +95,7 @@ export default function ContentList({
   }, [prefersReducedMotion]);
 
   return (
-    <ul ref={component} className="grid gap-4">
+    <ul ref={component} className="grid gap-6 sm:gap-8">
       {items.map((post, index) => (
         <li
           key={post.id}

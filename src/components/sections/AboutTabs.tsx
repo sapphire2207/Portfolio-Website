@@ -85,12 +85,12 @@ const tabContent: Record<"education" | "courses" | "achievements", TabItem[]> = 
 
 function TabPanel({ items }: { items: TabItem[] }) {
   return (
-    <div className="h-full w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#131a2c]/90 p-4 sm:p-5">
+    <div className="h-auto w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#131a2c]/90 p-4 sm:p-6 md:p-8">
       <div className="grid gap-4">
         {items.map((item) => (
           <article
             key={item.title}
-            className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1730]/75 p-4 sm:p-5"
+            className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1730]/75 p-4 sm:p-6 md:p-8"
           >
             <div
               className={`pointer-events-none absolute -right-8 top-1/2 hidden h-24 w-24 -translate-y-1/2 rounded-full bg-gradient-to-br opacity-30 blur-xl transition-opacity duration-300 group-hover:opacity-50 sm:block ${item.accent}`}
@@ -150,18 +150,17 @@ export default function AboutTabs() {
 
   return (
     <Bounded>
-      <section className="rounded-3xl border border-white/[0.08] bg-[#111423]/80 p-4 shadow-[0_0_40px_rgba(108,99,255,0.10)] backdrop-blur-xl sm:p-5 md:p-8">
+      <section className="overflow-hidden rounded-3xl border border-white/[0.08] bg-[#111423]/80 p-4 shadow-[0_0_40px_rgba(108,99,255,0.10)] backdrop-blur-xl sm:p-6 md:p-8">
         <Heading as="h2" size="lg" className="display-font mb-4 text-[#f0f0ff] sm:mb-5 md:mb-6">
           Highlights
         </Heading>
 
-        <div className="relative mx-auto flex h-[31rem] w-full max-w-5xl flex-col [perspective:1000px] items-start justify-start sm:h-[35rem] md:h-[40rem]">
+        <div className="relative mx-auto flex h-auto min-h-[20rem] w-full max-w-5xl flex-col items-start justify-start [perspective:1000px]">
           <Tabs
             tabs={tabs}
             containerClassName="gap-1"
             tabClassName="border border-white/10 bg-[#0f1730]/80 text-xs font-semibold text-[#b8c2e6] sm:text-sm"
             activeTabClassName="bg-gradient-to-r from-[#4f46e5] to-[#2563eb]"
-            contentClassName="mt-24"
           />
         </div>
       </section>

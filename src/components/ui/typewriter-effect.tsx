@@ -29,7 +29,7 @@ export const TypewriterEffect = ({
   useEffect(() => {
     if (isInView) {
       animate(
-        "span",
+        "[data-typewriter-char]",
         {
           display: "inline-block",
           opacity: 1,
@@ -46,14 +46,16 @@ export const TypewriterEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope} className="inline">
+      <motion.div ref={scope} className="inline leading-none">
         {wordsArray.map((word, idx) => {
+          const isLastWord = idx === wordsArray.length - 1;
           return (
-            <div key={`word-${idx}`} className="inline-block">
+            <span key={`word-${idx}`} className="inline-block align-baseline">
               {word.text.map((char, index) => (
                 <motion.span
                   initial={{}}
                   key={`char-${index}`}
+                  data-typewriter-char
                   className={cn(
                     `dark:text-white text-black opacity-0 hidden`,
                     word.className
@@ -62,8 +64,29 @@ export const TypewriterEffect = ({
                   {char}
                 </motion.span>
               ))}
-              {idx < wordsArray.length - 1 ? <span>&nbsp;</span> : null}
-            </div>
+              {isLastWord ? (
+                <motion.span
+                  aria-hidden="true"
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                  className={cn(
+                    "ml-0.5 inline-block h-[0.85em] w-[2px] shrink-0 rounded-sm bg-blue-500 leading-none align-baseline sm:h-[1em] sm:w-[3px]",
+                    cursorClassName
+                  )}
+                ></motion.span>
+              ) : (
+                <span aria-hidden="true">&nbsp;</span>
+              )}
+            </span>
           );
         })}
       </motion.div>
@@ -72,28 +95,11 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        "text-center text-base font-bold leading-none sm:text-xl md:text-3xl lg:text-5xl",
         className
       )}
     >
       {renderWords()}
-      <motion.span
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
-          cursorClassName
-        )}
-      ></motion.span>
     </div>
   );
 };

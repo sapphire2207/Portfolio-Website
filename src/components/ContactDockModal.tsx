@@ -123,20 +123,19 @@ function ContactModalPanel({ animationData }: { animationData: object | null }) 
   }, [open]);
 
   return (
-    <ModalBody className="min-h-0 w-[94vw] max-w-4xl border border-white/10 bg-[#05070e] md:max-w-4xl">
-      <ModalContent className="p-0">
-        <div className="px-6 pt-10 md:px-10">
-          <h3 className="display-font text-center text-3xl font-bold text-[#f1f3ff]">
+    <ModalBody className="w-[92vw] max-h-[85vh] max-w-sm overflow-y-auto rounded-2xl border border-white/10 bg-[#05070e] overscroll-contain sm:max-w-md md:w-[94vw] md:max-h-[90vh] md:max-w-4xl md:overflow-hidden">
+      <ModalContent className="p-5 sm:p-7 md:p-0">
+        <div className="md:px-10 md:pt-10">
+          <h3 className="display-font text-center text-lg font-bold text-[#f1f3ff] sm:text-xl md:text-3xl">
             Let&apos;s Connect
-            <span className="mx-2 inline-flex rounded-md border border-white/20 bg-white/10 px-2 py-0.5 text-xl text-white/90">
+            <span className="mx-2 inline-flex rounded-md border border-white/20 bg-white/10 px-2 py-0.5 text-base text-white/90 sm:text-lg md:text-xl">
               now
             </span>{" "}
-            *
           </h3>
         </div>
 
-        <div className="mt-7 px-4 pb-2 md:px-8">
-          <div className="mx-auto flex h-56 items-center justify-center rounded-2xl border border-white/15 bg-[#0d111f] shadow-xl md:h-64">
+        <div className="mt-5 md:mt-7 md:px-8 md:pb-2">
+          <div className="mx-auto flex h-24 w-full max-w-[120px] items-center justify-center rounded-2xl border border-white/15 bg-[#0d111f] shadow-xl sm:h-32 sm:max-w-[160px] md:h-64 md:max-w-none">
             {animationData ? (
               <Lottie
                 lottieRef={lottieRef}
@@ -151,8 +150,8 @@ function ContactModalPanel({ animationData }: { animationData: object | null }) 
           </div>
         </div>
 
-        <div className="px-6 pb-8 pt-6 md:px-10">
-          <div className="grid grid-cols-1 gap-y-5 sm:grid-cols-2 sm:gap-x-10">
+        <div className="pb-2 pt-5 md:px-10 md:pb-8 md:pt-6">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:gap-x-10 md:gap-y-5">
             {contactItems.map((item) => (
               <a
                 key={item.label}
@@ -165,17 +164,17 @@ function ContactModalPanel({ animationData }: { animationData: object | null }) 
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className={`group inline-flex items-center text-lg text-[#e7ebff] transition-colors duration-300 ${item.hoverColor}`}
+                className={`group inline-flex items-center gap-2 text-sm text-[#e7ebff] transition-colors duration-300 sm:text-base md:text-lg ${item.hoverColor}`}
               >
-                <item.icon className="mr-2 h-4 w-4 text-[#b7bfd8] group-hover:text-current" />
-                <span className="text-base">{item.value}</span>
+                <item.icon className="h-3.5 w-3.5 text-[#b7bfd8] group-hover:text-current sm:h-4 sm:w-4" />
+                <span className="text-sm sm:text-base">{item.value}</span>
               </a>
             ))}
           </div>
         </div>
       </ModalContent>
 
-      <ModalFooter className="justify-end gap-3 border-t border-white/10 bg-white/[0.04] px-5 py-4 md:px-6">
+      <ModalFooter className="mt-auto justify-end gap-3 border-t border-white/10 bg-white/[0.04] px-5 py-4 pt-3 md:mt-0 md:px-6 md:pt-4">
         <ModalActions />
       </ModalFooter>
     </ModalBody>
@@ -189,7 +188,7 @@ function ModalActions() {
     <button
       type="button"
       onClick={() => setOpen(false)}
-      className="rounded-lg border border-black/60 bg-white px-8 py-2 text-lg text-black transition-colors hover:bg-neutral-100"
+      className="w-full rounded-lg border border-black/60 bg-white px-6 py-2 text-sm text-black transition-colors hover:bg-neutral-100 sm:w-auto sm:px-8 sm:text-base md:text-lg"
     >
       Close
     </button>

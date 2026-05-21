@@ -17,6 +17,7 @@ export default function AboutPage() {
           { techName: "Express", techColor: "#fbbf24" },
           { techName: "Redux", techColor: "#a78bfa" },
           { techName: "REST APIs", techColor: "#34d8ff" },
+          { techName: "DSA", techColor: "#f97316" },
           { techName: "LLM Integrations", techColor: "#ff6b6b" },
         ]}
       />

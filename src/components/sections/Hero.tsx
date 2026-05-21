@@ -54,7 +54,7 @@ export default function Hero({ firstName, lastName, tagLine, aboutText }: HeroPr
           </div>
           <div className="order-1 col-start-1 md:order-none md:row-start-1" data-speed=".2">
             <motion.div
-              className="display-font mb-5 sm:mb-6 md:mb-8"
+              className="display-font mb-5 overflow-visible leading-none sm:mb-6 md:mb-8"
               aria-label={`${firstName} ${lastName}`}
               initial={prefersReducedMotion ? false : "hidden"}
               animate="visible"
@@ -77,8 +77,8 @@ export default function Hero({ firstName, lastName, tagLine, aboutText }: HeroPr
                       "bg-gradient-to-r from-[#6c63ff] via-[#a78bfa] to-[#00d4ff] bg-clip-text !text-transparent",
                   },
                 ]}
-                className="!text-left !text-[clamp(2.15rem,11.5vw,8.75rem)] !font-black !leading-[0.94] !tracking-[-0.02em]"
-                cursorClassName="!h-[1em] !bg-[#a78bfa]"
+                className="!text-left !text-[clamp(2rem,10.8vw,8.75rem)] sm:!text-[clamp(2.15rem,11.5vw,8.75rem)] !font-black !leading-[0.94] !tracking-[-0.02em]"
+                cursorClassName="!bg-[#a78bfa]"
               />
             </motion.div>
 
