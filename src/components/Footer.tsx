@@ -1,5 +1,6 @@
 ﻿import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 import Bounded from "@/components/Bounded";
 
 const NAME = "Mysore Sridhar";
@@ -11,8 +12,8 @@ const NAV_ITEMS = [
 
 const SOCIAL_LINKS = {
   github: "https://github.com/sapphire2207",
-  twitter: "https://leetcode.com/sapphire2207",
-  linkedin: "https://www.linkedin.com/in/mysore-sridhar",
+  leetcode: "https://leetcode.com/u/sapphire2207/",
+  linkedin: "https://www.linkedin.com/in/mysoresridhar",
 };
 
 export default function Footer() {
@@ -60,13 +61,13 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href={SOCIAL_LINKS.twitter}
+            href={SOCIAL_LINKS.leetcode}
             className="motion-all p-2 text-2xl text-[#5a5a72] hover:scale-110 hover:text-[#ffa116]"
             aria-label={`${NAME} on LeetCode`}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <FaTwitter />
+            <SiLeetcode />
           </a>
           <a
             href={SOCIAL_LINKS.linkedin}
