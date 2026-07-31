@@ -66,7 +66,7 @@ const contactItems = [
   {
     label: "AI Engineer Resume",
     value: "View AI Engineer Resume (PDF)",
-    href: "#",
+    href: "/api/ai-resume",
     newTab: true,
     icon: FaFileLines,
     hoverColor: "hover:text-[#00d4ff]",

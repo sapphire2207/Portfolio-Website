@@ -55,7 +55,7 @@ const contactItems = [
   {
     label: "AI Engineer Resume",
     value: "View AI Engineer Resume",
-    href: "#",
+    href: "/api/ai-resume",
     icon: FaFileLines,
     hoverColor: "hover:text-[#00d4ff]",
   },
@@ -85,8 +85,16 @@ export default function AboutContact() {
               <a
                 key={item.label}
                 href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                target={
+                  item.href.startsWith("http") || item.href.startsWith("/api")
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  item.href.startsWith("http") || item.href.startsWith("/api")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 className={`group inline-flex items-center justify-center rounded-lg border border-white/10 bg-[#131b31]/50 px-3 py-2 text-sm text-[#d7def6] transition-colors duration-300 ${item.hoverColor}`}
               >
                 <item.icon className="mr-2 h-4 w-4 text-[#9aa5c8] group-hover:text-current" />
