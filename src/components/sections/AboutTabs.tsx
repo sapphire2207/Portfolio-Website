@@ -28,7 +28,7 @@ const tabContent: Record<"education" | "courses" | "achievements", TabItem[]> = 
       title: "BTech Computer Science in Artificial Intelligence and Data Science",
       subtitle: "Sri Indu College of Engineering & Technology",
       period: "2022 - 2026",
-      points: ["GPA: 8.7 / 10.0"],
+      points: ["GPA: 8.59 / 10.0"],
       icon: FaGraduationCap,
       accent: "from-[#6c63ff] to-[#00d4ff]",
     },

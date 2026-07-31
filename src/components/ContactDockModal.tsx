@@ -56,12 +56,20 @@ const contactItems = [
     hoverColor: "hover:text-[#ffa116]",
   },
   {
-    label: "Resume",
-    value: "View Resume (PDF)",
+    label: "Full Stack Developer Resume",
+    value: "View Full Stack Developer Resume (PDF)",
     href: "/api/resume",
     newTab: true,
     icon: FaFileLines,
     hoverColor: "hover:text-[#a78bfa]",
+  },
+  {
+    label: "AI Engineer Resume",
+    value: "View AI Engineer Resume (PDF)",
+    href: "#",
+    newTab: true,
+    icon: FaFileLines,
+    hoverColor: "hover:text-[#00d4ff]",
   },
 ];
 

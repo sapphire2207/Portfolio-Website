@@ -46,11 +46,18 @@ const contactItems = [
     hoverColor: "hover:text-[#ffa116]",
   },
   {
-    label: "Resume",
-    value: "Available On Request",
-    href: "mailto:mysoresridhar72@gmail.com?subject=Resume%20Request",
+    label: "Full Stack Developer Resume",
+    value: "View Full Stack Developer Resume",
+    href: "/api/resume",
     icon: FaFileLines,
     hoverColor: "hover:text-[#a78bfa]",
+  },
+  {
+    label: "AI Engineer Resume",
+    value: "View AI Engineer Resume",
+    href: "#",
+    icon: FaFileLines,
+    hoverColor: "hover:text-[#00d4ff]",
   },
 ];
 

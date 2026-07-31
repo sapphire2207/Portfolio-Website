@@ -21,9 +21,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Mysore Sridhar | Full Stack Web Developer",
+  title: "Mysore Sridhar | AI Engineer & Full Stack Developer",
   description:
-    "Portfolio of Mysore Sridhar, a Full Stack Web Developer from Hyderabad specializing in MERN stack, Next.js, AI-integrated products, and scalable web applications.",
+    "Portfolio of Mysore Sridhar, an AI Engineer & Full Stack Developer specializing in Generative AI, Agentic AI, LangGraph, FastAPI, Next.js, and TypeScript.",
 };
 
 export default function RootLayout({

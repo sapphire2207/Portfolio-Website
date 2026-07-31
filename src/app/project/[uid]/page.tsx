@@ -16,6 +16,57 @@ type ProjectConfig = {
 };
 
 const PROJECTS: Record<string, ProjectConfig> = {
+  "researchflow-ai-multi-agent-ai-research-platform": {
+    title: "ResearchFlow AI - Multi-Agent AI Research Platform",
+    date: "2026-01-01",
+    tags: [
+      "LangGraph",
+      "LangChain",
+      "FastAPI",
+      "Next.js",
+      "TypeScript",
+      "Mistral AI",
+      "Tavily API",
+      "Multi-Agent Systems",
+    ],
+    metaDescription:
+      "Multi-agent AI research platform for automated technical research, web search synthesis, and report generation.",
+    markdownFile: "researchflow-ai.md",
+  },
+  "recap-ai-ai-meeting-intelligence-platform": {
+    title: "Recap AI - AI Meeting Intelligence Platform",
+    date: "2026-01-01",
+    tags: [
+      "LangGraph",
+      "LangChain",
+      "FastAPI",
+      "Next.js",
+      "ChromaDB",
+      "Whisper",
+      "Mistral AI",
+      "RAG",
+    ],
+    metaDescription:
+      "AI-powered meeting intelligence platform for audio transcription, smart summaries, and meeting query RAG.",
+    markdownFile: "recap-ai.md",
+  },
+  "inkflow-ai-multi-agent-ai-blog-generation-platform": {
+    title: "InkFlow AI - Multi-Agent AI Blog Generation Platform",
+    date: "2026-01-01",
+    tags: [
+      "LangGraph",
+      "LangChain",
+      "FastAPI",
+      "Next.js",
+      "Mistral AI",
+      "Tavily API",
+      "Pollinations AI",
+      "Agentic AI",
+    ],
+    metaDescription:
+      "Autonomous multi-agent blog generation platform leveraging agentic AI workflows and dynamic visual generation.",
+    markdownFile: "inkflow-ai.md",
+  },
   "fashora-ai-powered-full-stack-e-commerce-platform": {
     title: "Fashora - AI Powered Full-Stack E-Commerce Platform",
     date: "2025-01-01",

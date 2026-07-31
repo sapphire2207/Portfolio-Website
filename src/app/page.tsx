@@ -31,8 +31,8 @@ export default function HomePage() {
       <Hero
         firstName="Mysore"
         lastName="Sridhar"
-        tagLine="Full Stack Web Developer"
-        aboutText="I’m a Full Stack Web Developer and B.Tech graduate in Artificial Intelligence and Data Science from Sri Indu College of Engineering & Technology. I specialize in building scalable web applications using the MERN stack, Next.js, and TypeScript. I’m passionate about backend development, system design, APIs, and solving DSA problems. I enjoy creating real-world products with clean architecture, performance, and great user experience while continuously exploring modern technologies and AI integrations."
+        tagLine="AI Engineer & Full Stack Developer"
+        aboutText="I’m an AI Engineer and Full Stack Developer with a B.Tech in Artificial Intelligence and Data Science from Sri Indu College of Engineering & Technology. I specialize in building production-ready AI applications using Generative AI, Agentic AI, LangGraph, and FastAPI, along with scalable web applications using Next.js and TypeScript. I’m passionate about AI systems, backend engineering, APIs, and clean software architecture. I enjoy creating intelligent, real-world products powered by LLMs, multi-agent systems, and modern web technologies while continuously exploring advancements in AI and software engineering."
       />
     </main>
   );

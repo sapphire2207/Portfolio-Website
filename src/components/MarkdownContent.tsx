@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import MermaidRenderer from "./MermaidRenderer";
 
 export default function MarkdownContent({ markdown }: { markdown: string }) {
   return (
@@ -40,9 +41,48 @@ export default function MarkdownContent({ markdown }: { markdown: string }) {
               {children}
             </a>
           ),
-          code: ({ children }) => (
-            <code className="rounded bg-[#20263d] px-1.5 py-0.5 text-[#9ce7ff]">{children}</code>
-          ),
+          pre: ({ children }) => <>{children}</>,
+          code: ({ className, children }) => {
+            const match = /language-(\w+)/.exec(className || "");
+            const lang = match ? match[1] : "";
+            const contentStr = String(children).replace(/\n$/, "");
+
+            if (
+              lang === "mermaid" ||
+              contentStr.trim().startsWith("flowchart") ||
+              contentStr.trim().startsWith("graph") ||
+              contentStr.trim().startsWith("sequenceDiagram") ||
+              contentStr.trim().startsWith("gantt") ||
+              contentStr.trim().startsWith("classDiagram")
+            ) {
+              return <MermaidRenderer code={contentStr} />;
+            }
+
+            const isInline = !className && !contentStr.includes("\n");
+
+            if (isInline) {
+              return (
+                <code className="rounded bg-[#20263d] px-1.5 py-0.5 font-mono text-sm text-[#9ce7ff]">
+                  {children}
+                </code>
+              );
+            }
+
+            return (
+              <div className="my-6 overflow-x-auto rounded-2xl border border-white/10 bg-[#0f0f1a] p-4 text-xs font-mono text-[#c8d1ef] shadow-lg">
+                {lang ? (
+                  <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#6c63ff]">
+                    {lang}
+                  </div>
+                ) : null}
+                <pre className="overflow-x-auto">
+                  <code className="font-mono leading-relaxed text-[#c8d1ef]">
+                    {children}
+                  </code>
+                </pre>
+              </div>
+            );
+          },
           table: ({ children }) => (
             <div className="mb-6 overflow-x-auto rounded-xl border border-white/10">
               <table className="min-w-full border-collapse bg-[#11162b]">{children}</table>

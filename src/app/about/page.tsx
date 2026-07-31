@@ -8,17 +8,17 @@ export default function AboutPage() {
       <TechList
         title="Core Skills"
         items={[
-          { techName: "MERN Stack", techColor: "#00d4ff" },
-          { techName: "Next.js", techColor: "#a78bfa" },
-          { techName: "React.js", techColor: "#6c63ff" },
-          { techName: "Node.js", techColor: "#4ade80" },
-          { techName: "MongoDB", techColor: "#4ade80" },
+          { techName: "Python", techColor: "#38bdf8" },
+          { techName: "LangGraph", techColor: "#a78bfa" },
+          { techName: "LangChain", techColor: "#00d4ff" },
+          { techName: "Generative AI", techColor: "#ff6b6b" },
+          { techName: "Agentic AI", techColor: "#4ade80" },
+          { techName: "FastAPI", techColor: "#2dd4bf" },
+          { techName: "Next.js", techColor: "#f0f0ff" },
           { techName: "TypeScript", techColor: "#38bdf8" },
-          { techName: "Express", techColor: "#fbbf24" },
-          { techName: "Redux", techColor: "#a78bfa" },
-          { techName: "REST APIs", techColor: "#34d8ff" },
-          { techName: "DSA", techColor: "#f97316" },
-          { techName: "LLM Integrations", techColor: "#ff6b6b" },
+          { techName: "RAG", techColor: "#fbbf24" },
+          { techName: "AI Agents", techColor: "#ec4899" },
+          { techName: "Multi-Agent Systems", techColor: "#8b5cf6" },
         ]}
       />
       <div className="relative mt-1 sm:mt-2 md:mt-3">

@@ -68,8 +68,6 @@ export default function ContentBody({
               ))}
             </div>
 
-            <p className="text-sm text-[#5a5a72]">{formattedDate}</p>
-
             <div className="my-8 h-px bg-gradient-to-r from-transparent via-[#2a2a40] to-transparent md:my-10" />
 
             <div
