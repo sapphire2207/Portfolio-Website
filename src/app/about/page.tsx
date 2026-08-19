@@ -9,6 +9,7 @@ export default function AboutPage() {
         title="Core Skills"
         items={[
           { techName: "Python", techColor: "#38bdf8" },
+          { techName: "Java", techColor: "#f97316" },
           { techName: "LangGraph", techColor: "#a78bfa" },
           { techName: "LangChain", techColor: "#00d4ff" },
           { techName: "Generative AI", techColor: "#ff6b6b" },
